@@ -946,39 +946,14 @@ document.addEventListener(
    INITIAL PDF LOAD
 ========================================================= */
 
-/* =========================================================
-   DEFAULT LANGUAGE
-========================================================= */
+if (
+    selectedLanguage &&
+    languages[selectedLanguage]
+) {
 
-/*
-   English is ALWAYS the default language
-   when the website is opened.
-*/
+    changeLanguage(
+        selectedLanguage
+    );
 
-selectedLanguage = "english";
-
-/* Select English card */
-
-languageButtons.forEach(button => {
-
-    if (button.dataset.language === "english") {
-
-        button.classList.add("selected");
-
-    }
-
-});
-
-/* Enable Continue button */
-
-continueButton.disabled = false;
-
-/* Set English in dropdown */
-
-if (languageSelect) {
-
-    languageSelect.value = "english";
-
-}
 }
 ```
