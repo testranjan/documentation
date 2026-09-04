@@ -1,157 +1,304 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#119E4C">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Multilingual Documentation</title>
+    <title>Pre-Training Outlet Visit & Awareness Program</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+    <!-- LANGUAGE SELECTION SCREEN -->
+    <section id="languageScreen" class="language-screen">
 
-    <header class="header">
+        <div class="language-background"></div>
 
-        <div class="header-left">
+        <div class="language-card">
 
-            <div class="logo">
-                📚
+            <div class="brand-icon">📚</div>
+
+            <div class="welcome-badge">
+                DOCUMENTATION PORTAL
             </div>
 
-            <div class="title">
+            <h1>Select Your Language</h1>
 
-                <h1>
-                    PRE-TRAINING OUTLET VISIT
-                </h1>
+            <p class="language-subtitle">
+                Please select your preferred language to continue.
+            </p>
 
-                <p>
-                    & AWARENESS PROGRAM
-                </p>
+            <div class="language-grid">
+
+                <button class="language-card-button"
+                        data-language="english">
+                    <span class="flag">🇬🇧</span>
+                    <span class="language-name">English</span>
+                    <span class="language-native">English</span>
+                    <span class="check">✓</span>
+                </button>
+
+                <button class="language-card-button"
+                        data-language="japanese">
+                    <span class="flag">🇯🇵</span>
+                    <span class="language-name">Japanese</span>
+                    <span class="language-native">日本語</span>
+                    <span class="check">✓</span>
+                </button>
+
+                <button class="language-card-button"
+                        data-language="nepali">
+                    <span class="flag">🇳🇵</span>
+                    <span class="language-name">Nepali</span>
+                    <span class="language-native">नेपाली</span>
+                    <span class="check">✓</span>
+                </button>
+
+                <button class="language-card-button"
+                        data-language="hindi">
+                    <span class="flag">🇮🇳</span>
+                    <span class="language-name">Hindi</span>
+                    <span class="language-native">हिन्दी</span>
+                    <span class="check">✓</span>
+                </button>
 
             </div>
+
+            <button id="continueButton"
+                    class="continue-button"
+                    disabled>
+                Continue <span>→</span>
+            </button>
+
+            <p class="selection-note">
+                🌐 You can change the language anytime later.
+            </p>
 
         </div>
+    </section>
 
 
-        <!-- LANGUAGE SELECTOR -->
+    <!-- MAIN WEBSITE -->
+    <div id="website" class="website hidden">
 
-        <div class="language-section">
+        <!-- HEADER -->
+        <header class="header">
 
-            <span class="language-icon">
-                🌐
+            <div class="header-left">
+
+                <div class="logo">📚</div>
+
+                <div class="title">
+                    <h1>PRE-TRAINING OUTLET VISIT</h1>
+                    <p>& AWARENESS PROGRAM</p>
+                </div>
+
+            </div>
+
+            <div class="language-section">
+
+                <span class="language-icon">🌐</span>
+
+                <select id="languageSelect">
+
+                    <option value="english">
+                        🇬🇧 English
+                    </option>
+
+                    <option value="japanese">
+                        🇯🇵 日本語
+                    </option>
+
+                    <option value="nepali">
+                        🇳🇵 नेपाली
+                    </option>
+
+                    <option value="hindi">
+                        🇮🇳 हिन्दी
+                    </option>
+
+                </select>
+
+            </div>
+
+        </header>
+
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <!-- DOCUMENT INFORMATION -->
+            <section class="document-info">
+
+                <div class="document-text">
+
+                    <div class="document-label">
+                        DOCUMENT
+                    </div>
+
+                    <h2 id="documentTitle">
+                        English Documentation
+                    </h2>
+
+                    <p id="documentDescription">
+                        Pre-Training Outlet Visit & Awareness Program
+                    </p>
+
+                </div>
+
+
+                <!-- OPEN PDF -->
+                <button id="openPdf"
+                        class="open-button"
+                        type="button">
+                    <span>↗</span>
+                    Open PDF
+                </button>
+
+            </section>
+
+
+            <!-- PDF VIEWER -->
+            <section class="pdf-wrapper">
+
+                <div class="pdf-toolbar">
+
+                    <div class="pdf-title">
+                        <span class="pdf-icon">📄</span>
+                        <span>Document Preview</span>
+                    </div>
+
+                    <span id="currentLanguage"
+                          class="language-badge">
+                        English
+                    </span>
+
+                </div>
+
+
+                <div class="pdf-viewer">
+
+                    <iframe
+                        id="pdfViewer"
+                        src="./pdf/english.pdf#toolbar=0&navpanes=0&scrollbar=1"
+                        title="Documentation PDF"
+                        loading="lazy">
+                    </iframe>
+
+                </div>
+
+            </section>
+
+
+            <!-- DOWNLOAD -->
+            <section class="download-section">
+
+                <button id="downloadPdf"
+                        class="download-button"
+                        type="button">
+
+                    <span>⬇</span>
+                    Download PDF
+
+                </button>
+
+                <p class="download-note">
+                    🔒 Password required for downloading.
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <p>
+                Multilingual Documentation Portal
+            </p>
+
+            <span>
+                © 2026
             </span>
 
-            <select id="languageSelect">
+        </footer>
 
-                <option value="english">
-                    🇬🇧 English
-                </option>
-
-                <option value="japanese">
-                    🇯🇵 日本語
-                </option>
-
-                <option value="nepali">
-                    🇳🇵 नेपाली
-                </option>
-
-                <option value="hindi">
-                    🇮🇳 हिन्दी
-                </option>
-
-            </select>
-
-        </div>
-
-    </header>
+    </div>
 
 
+    <!-- PASSWORD MODAL -->
+    <div id="passwordModal"
+         class="password-modal hidden">
 
-    <!-- =========================
-         PDF VIEWER SECTION
-    ========================== -->
+        <div class="password-overlay"></div>
 
-    <main class="main-content">
+        <div class="password-box">
 
+            <button id="closePassword"
+                    class="close-password"
+                    type="button">
+                ×
+            </button>
 
-        <!-- PDF TITLE -->
+            <div class="password-icon">
+                🔐
+            </div>
 
-        <div class="document-info">
+            <h2>
+                Download Protected
+            </h2>
 
-            <div>
+            <p>
+                Please enter the password to download this document.
+            </p>
 
-                <h2 id="documentTitle">
-                    English Documentation
-                </h2>
+            <div class="password-input-wrapper">
 
-                <p id="documentDescription">
-                    Pre-Training Outlet Visit & Awareness Program
-                </p>
+                <input
+                    id="downloadPassword"
+                    type="password"
+                    placeholder="Enter password"
+                    autocomplete="off">
+
+                <button id="togglePassword"
+                        type="button">
+                    👁
+                </button>
 
             </div>
 
+            <p id="passwordError"
+               class="password-error">
+            </p>
 
-            <!-- OPEN PDF BUTTON -->
+            <div class="password-actions">
 
-            <a
-                id="openPdf"
-                href="pdf/english.pdf"
-                target="_blank"
-                class="open-button"
-            >
+                <button id="cancelPassword"
+                        class="cancel-button"
+                        type="button">
+                    Cancel
+                </button>
 
-                ↗ Open PDF
+                <button id="confirmDownload"
+                        class="confirm-button"
+                        type="button">
+                    Download
+                </button>
 
-            </a>
-
-        </div>
-
-
-
-        <!-- PDF VIEWER -->
-
-        <div class="pdf-container">
-
-            <iframe
-                id="pdfViewer"
-                src="pdf/english.pdf"
-                title="Documentation PDF"
-            >
-
-            </iframe>
+            </div>
 
         </div>
 
+    </div>
 
-    </main>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <p>
-            Multilingual Documentation Portal
-        </p>
-
-    </footer>
-
-
-
-    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
 </body>
 </html>
+
