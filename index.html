@@ -1,304 +1,490 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#119E4C">
 
-    <title>Pre-Training Outlet Visit & Awareness Program</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <meta
+        name="theme-color"
+        content="#119E4C">
+
+    <title>
+        Pre-Training Outlet Visit & Awareness Program
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css">
+
 </head>
+
 
 <body>
 
-    <!-- LANGUAGE SELECTION SCREEN -->
-    <section id="languageScreen" class="language-screen">
 
-        <div class="language-background"></div>
+<!-- =====================================================
+     LANGUAGE SELECTION SCREEN
+===================================================== -->
 
-        <div class="language-card">
+<section
+    id="languageScreen"
+    class="language-screen">
 
-            <div class="brand-icon">📚</div>
+    <div class="language-background"></div>
 
-            <div class="welcome-badge">
-                DOCUMENTATION PORTAL
-            </div>
 
-            <h1>Select Your Language</h1>
+    <div class="language-card">
 
-            <p class="language-subtitle">
-                Please select your preferred language to continue.
-            </p>
 
-            <div class="language-grid">
+        <div class="brand-icon">
+            📚
+        </div>
 
-                <button class="language-card-button"
-                        data-language="english">
-                    <span class="flag">🇬🇧</span>
-                    <span class="language-name">English</span>
-                    <span class="language-native">English</span>
-                    <span class="check">✓</span>
-                </button>
 
-                <button class="language-card-button"
-                        data-language="japanese">
-                    <span class="flag">🇯🇵</span>
-                    <span class="language-name">Japanese</span>
-                    <span class="language-native">日本語</span>
-                    <span class="check">✓</span>
-                </button>
+        <div class="welcome-badge">
+            DOCUMENTATION PORTAL
+        </div>
 
-                <button class="language-card-button"
-                        data-language="nepali">
-                    <span class="flag">🇳🇵</span>
-                    <span class="language-name">Nepali</span>
-                    <span class="language-native">नेपाली</span>
-                    <span class="check">✓</span>
-                </button>
 
-                <button class="language-card-button"
-                        data-language="hindi">
-                    <span class="flag">🇮🇳</span>
-                    <span class="language-name">Hindi</span>
-                    <span class="language-native">हिन्दी</span>
-                    <span class="check">✓</span>
-                </button>
+        <h1>
+            Select Your Language
+        </h1>
 
-            </div>
 
-            <button id="continueButton"
-                    class="continue-button"
-                    disabled>
-                Continue <span>→</span>
+        <p class="language-subtitle">
+            Please select your preferred language to continue.
+        </p>
+
+
+        <div class="language-grid">
+
+
+            <!-- ENGLISH -->
+
+            <button
+                type="button"
+                class="language-card-button"
+                data-language="english">
+
+                <span class="flag">
+                    EN
+                </span>
+
+                <span class="language-name">
+                    English
+                </span>
+
+                <span class="language-native">
+                    English
+                </span>
+
+                <span class="check">
+                    ✓
+                </span>
+
             </button>
 
-            <p class="selection-note">
-                🌐 You can change the language anytime later.
-            </p>
+
+            <!-- JAPANESE -->
+
+            <button
+                type="button"
+                class="language-card-button"
+                data-language="japanese">
+
+                <span class="flag">
+                    🇯🇵
+                </span>
+
+                <span class="language-name">
+                    Japanese
+                </span>
+
+                <span class="language-native">
+                    日本語
+                </span>
+
+                <span class="check">
+                    ✓
+                </span>
+
+            </button>
+
+
+            <!-- NEPALI -->
+
+            <button
+                type="button"
+                class="language-card-button"
+                data-language="nepali">
+
+                <span class="flag">
+                    🇳🇵
+                </span>
+
+                <span class="language-name">
+                    Nepali
+                </span>
+
+                <span class="language-native">
+                    नेपाली
+                </span>
+
+                <span class="check">
+                    ✓
+                </span>
+
+            </button>
+
+
+            <!-- HINDI -->
+
+            <button
+                type="button"
+                class="language-card-button"
+                data-language="hindi">
+
+                <span class="flag">
+                    🇮🇳
+                </span>
+
+                <span class="language-name">
+                    Hindi
+                </span>
+
+                <span class="language-native">
+                    हिन्दी
+                </span>
+
+                <span class="check">
+                    ✓
+                </span>
+
+            </button>
+
 
         </div>
-    </section>
 
 
-    <!-- MAIN WEBSITE -->
-    <div id="website" class="website hidden">
+        <p class="selection-note">
+            🌐 Select a language to open the document.
+        </p>
 
-        <!-- HEADER -->
-        <header class="header">
 
-            <div class="header-left">
+    </div>
 
-                <div class="logo">📚</div>
+</section>
 
-                <div class="title">
-                    <h1>PRE-TRAINING OUTLET VISIT</h1>
-                    <p>& AWARENESS PROGRAM</p>
-                </div>
+
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
+
+<div
+    id="website"
+    class="website hidden">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="header-left">
+
+            <div class="logo">
+                📚
+            </div>
+
+            <div class="title">
+
+                <h1>
+                    PRE-TRAINING OUTLET VISIT
+                </h1>
+
+                <p>
+                    & AWARENESS PROGRAM
+                </p>
 
             </div>
 
-            <div class="language-section">
+        </div>
 
-                <span class="language-icon">🌐</span>
 
-                <select id="languageSelect">
+        <div class="language-section">
 
-                    <option value="english">
-                        🇬🇧 English
-                    </option>
+            <span class="language-icon">
+                🌐
+            </span>
 
-                    <option value="japanese">
-                        🇯🇵 日本語
-                    </option>
+            <select id="languageSelect">
 
-                    <option value="nepali">
-                        🇳🇵 नेपाली
-                    </option>
+                <option value="english">
+                    🇬🇧 English
+                </option>
 
-                    <option value="hindi">
-                        🇮🇳 हिन्दी
-                    </option>
+                <option value="japanese">
+                    🇯🇵 日本語
+                </option>
 
-                </select>
+                <option value="nepali">
+                    🇳🇵 नेपाली
+                </option>
+
+                <option value="hindi">
+                    🇮🇳 हिन्दी
+                </option>
+
+            </select>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+
+        <!-- DOCUMENT INFORMATION -->
+
+        <section class="document-info">
+
+            <div class="document-text">
+
+                <div class="document-label">
+                    DOCUMENT
+                </div>
+
+                <h2 id="documentTitle">
+                    English Documentation
+                </h2>
+
+                <p id="documentDescription">
+                    Pre-Training Outlet Visit & Awareness Program
+                </p>
 
             </div>
 
-        </header>
+
+            <!-- OPEN PDF -->
+
+            <button
+                id="openPdf"
+                class="open-button"
+                type="button">
+
+                <span>
+                    ↗
+                </span>
+
+                Open PDF
+
+            </button>
+
+        </section>
 
 
-        <!-- MAIN -->
-        <main class="main-content">
+        <!-- PDF VIEWER -->
 
-            <!-- DOCUMENT INFORMATION -->
-            <section class="document-info">
+        <section class="pdf-wrapper">
 
-                <div class="document-text">
+            <div class="pdf-toolbar">
 
-                    <div class="document-label">
-                        DOCUMENT
-                    </div>
+                <div class="pdf-title">
 
-                    <h2 id="documentTitle">
-                        English Documentation
-                    </h2>
+                    <span class="pdf-icon">
+                        📄
+                    </span>
 
-                    <p id="documentDescription">
-                        Pre-Training Outlet Visit & Awareness Program
-                    </p>
-
-                </div>
-
-
-                <!-- OPEN PDF -->
-                <button id="openPdf"
-                        class="open-button"
-                        type="button">
-                    <span>↗</span>
-                    Open PDF
-                </button>
-
-            </section>
-
-
-            <!-- PDF VIEWER -->
-            <section class="pdf-wrapper">
-
-                <div class="pdf-toolbar">
-
-                    <div class="pdf-title">
-                        <span class="pdf-icon">📄</span>
-                        <span>Document Preview</span>
-                    </div>
-
-                    <span id="currentLanguage"
-                          class="language-badge">
-                        English
+                    <span>
+                        Document Preview
                     </span>
 
                 </div>
 
 
-                <div class="pdf-viewer">
+                <span
+                    id="currentLanguage"
+                    class="language-badge">
 
-                    <iframe
-                        id="pdfViewer"
-                        src="./pdf/english.pdf#toolbar=0&navpanes=0&scrollbar=1"
-                        title="Documentation PDF"
-                        loading="lazy">
-                    </iframe>
+                    English
 
-                </div>
+                </span>
 
-            </section>
+            </div>
 
 
-            <!-- DOWNLOAD -->
-            <section class="download-section">
+            <div class="pdf-viewer">
 
-                <button id="downloadPdf"
-                        class="download-button"
-                        type="button">
+                <iframe
+                    id="pdfViewer"
+                    src="./pdf/english.pdf#toolbar=0&navpanes=0&scrollbar=1"
+                    title="Documentation PDF"
+                    loading="lazy">
+                </iframe>
 
-                    <span>⬇</span>
-                    Download PDF
+            </div>
 
-                </button>
-
-                <p class="download-note">
-                    🔒 Password required for downloading.
-                </p>
-
-            </section>
-
-        </main>
+        </section>
 
 
-        <!-- FOOTER -->
-        <footer>
+        <!-- DOWNLOAD -->
 
-            <p>
-                Multilingual Documentation Portal
-            </p>
+        <section class="download-section">
 
-            <span>
-                © 2026
-            </span>
+            <button
+                id="downloadPdf"
+                class="download-button"
+                type="button">
 
-        </footer>
+                <span>
+                    ⬇
+                </span>
 
-    </div>
+                Download PDF
 
-
-    <!-- PASSWORD MODAL -->
-    <div id="passwordModal"
-         class="password-modal hidden">
-
-        <div class="password-overlay"></div>
-
-        <div class="password-box">
-
-            <button id="closePassword"
-                    class="close-password"
-                    type="button">
-                ×
             </button>
 
-            <div class="password-icon">
-                🔐
-            </div>
 
-            <h2>
-                Download Protected
-            </h2>
-
-            <p>
-                Please enter the password to download this document.
+            <p class="download-note">
+                🔒 Password required for downloading.
             </p>
 
-            <div class="password-input-wrapper">
+        </section>
 
-                <input
-                    id="downloadPassword"
-                    type="password"
-                    placeholder="Enter password"
-                    autocomplete="off">
 
-                <button id="togglePassword"
-                        type="button">
-                    👁
-                </button>
+    </main>
 
-            </div>
 
-            <p id="passwordError"
-               class="password-error">
-            </p>
+    <!-- FOOTER -->
 
-            <div class="password-actions">
+    <footer>
 
-                <button id="cancelPassword"
-                        class="cancel-button"
-                        type="button">
-                    Cancel
-                </button>
+        <p>
+            Multilingual Documentation Portal
+        </p>
 
-                <button id="confirmDownload"
-                        class="confirm-button"
-                        type="button">
-                    Download
-                </button>
+        <span>
+            © 2026
+        </span>
 
-            </div>
+    </footer>
+
+
+</div>
+
+
+<!-- =====================================================
+     PASSWORD MODAL
+===================================================== -->
+
+<div
+    id="passwordModal"
+    class="password-modal hidden">
+
+
+    <div class="password-overlay"></div>
+
+
+    <div class="password-box">
+
+
+        <button
+            id="closePassword"
+            class="close-password"
+            type="button">
+
+            ×
+
+        </button>
+
+
+        <div class="password-icon">
+            🔐
+        </div>
+
+
+        <h2>
+            Download Protected
+        </h2>
+
+
+        <p>
+            Please enter the password to download this document.
+        </p>
+
+
+        <div class="password-input-wrapper">
+
+            <input
+                id="downloadPassword"
+                type="password"
+                placeholder="Enter password"
+                autocomplete="off">
+
+
+            <button
+                id="togglePassword"
+                type="button">
+
+                👁
+
+            </button>
+
+        </div>
+
+
+        <p
+            id="passwordError"
+            class="password-error">
+        </p>
+
+
+        <div class="password-actions">
+
+
+            <button
+                id="cancelPassword"
+                class="cancel-button"
+                type="button">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                id="confirmDownload"
+                class="confirm-button"
+                type="button">
+
+                Download
+
+            </button>
+
 
         </div>
 
     </div>
 
+</div>
 
-    <script src="script.js"></script>
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="./script.js"></script>
+
 
 </body>
+
 </html>
 
