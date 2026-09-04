@@ -1,4 +1,4 @@
-javascript
+
 /* =========================================================
    PRE-TRAINING OUTLET VISIT & AWARENESS PROGRAM
    PDF DOCUMENT PORTAL
@@ -50,11 +50,8 @@ const DOWNLOAD_PASSWORD = "123456";
 
 
 /* =========================================================
-   GET HTML ELEMENTS
+   ELEMENTS
 ========================================================= */
-
-
-/* Language screen */
 
 const languageScreen =
     document.getElementById("languageScreen");
@@ -63,27 +60,16 @@ const website =
     document.getElementById("website");
 
 const languageButtons =
-    document.querySelectorAll(
-        ".language-card-button"
-    );
-
-
-/* Language selector */
+    document.querySelectorAll(".language-card-button");
 
 const languageSelect =
     document.getElementById("languageSelect");
-
-
-/* PDF */
 
 const pdfViewer =
     document.getElementById("pdfViewer");
 
 const openPdf =
     document.getElementById("openPdf");
-
-
-/* Document information */
 
 const documentTitle =
     document.getElementById("documentTitle");
@@ -94,14 +80,8 @@ const documentDescription =
 const currentLanguage =
     document.getElementById("currentLanguage");
 
-
-/* Download */
-
 const downloadPdf =
     document.getElementById("downloadPdf");
-
-
-/* Password modal */
 
 const passwordModal =
     document.getElementById("passwordModal");
@@ -150,7 +130,7 @@ function getPdfUrl(language) {
 
 
 /* =========================================================
-   CHANGE PDF INSIDE WEBSITE
+   CHANGE PDF INSIDE PORTAL
 ========================================================= */
 
 function changeLanguage(language) {
@@ -161,6 +141,11 @@ function changeLanguage(language) {
 
     if (!data) {
 
+        console.error(
+            "Language not found:",
+            language
+        );
+
         return;
 
     }
@@ -170,19 +155,21 @@ function changeLanguage(language) {
         language;
 
 
-    /* Document title */
-
     documentTitle.textContent =
         data.title;
 
-
-    /* Document description */
 
     documentDescription.textContent =
         data.description;
 
 
-    /* PDF */
+    currentLanguage.textContent =
+        data.name;
+
+
+    languageSelect.value =
+        language;
+
 
     const pdfUrl =
         getPdfUrl(language);
@@ -197,35 +184,15 @@ function changeLanguage(language) {
     }
 
 
-    /* Current language */
-
-    currentLanguage.textContent =
-        data.name;
-
-
-    /* Dropdown */
-
-    languageSelect.value =
-        language;
-
-
-    /* Browser language */
-
     document.documentElement.lang =
-
         language === "japanese"
             ? "ja"
-
             : language === "nepali"
                 ? "ne"
-
                 : language === "hindi"
                     ? "hi"
-
                     : "en";
 
-
-    /* Save */
 
     localStorage.setItem(
         "selectedLanguage",
@@ -237,22 +204,18 @@ function changeLanguage(language) {
 
 /* =========================================================
    LANGUAGE CARD
-   CLICK = DIRECT PDF
+   CLICK LANGUAGE → DIRECTLY OPEN PDF
 ========================================================= */
 
-languageButtons.forEach(button => {
-
+languageButtons.forEach(function(button) {
 
     button.addEventListener(
         "click",
-        function () {
-
+        function() {
 
             const language =
                 this.dataset.language;
 
-
-            /* Check language */
 
             if (!languages[language]) {
 
@@ -269,7 +232,7 @@ languageButtons.forEach(button => {
             /* Visual selection */
 
             languageButtons.forEach(
-                item => {
+                function(item) {
 
                     item.classList.remove(
                         "selected"
@@ -284,7 +247,7 @@ languageButtons.forEach(button => {
             );
 
 
-            /* Save */
+            /* Save selected language */
 
             selectedLanguage =
                 language;
@@ -302,16 +265,21 @@ languageButtons.forEach(button => {
                 languages[language].pdf;
 
 
-            /*
-                DIRECT REDIRECT
+            console.log(
+                "Opening:",
+                pdfUrl
+            );
 
-                No Continue button.
+
+            /*
+               DIRECT PDF REDIRECT
+
+               No Continue button.
             */
 
             window.location.href =
                 pdfUrl +
                 "#toolbar=0&navpanes=0&scrollbar=1";
-
 
         }
     );
@@ -325,8 +293,7 @@ languageButtons.forEach(button => {
 
 languageSelect.addEventListener(
     "change",
-    function () {
-
+    function() {
 
         const language =
             this.value;
@@ -339,14 +306,9 @@ languageSelect.addEventListener(
         }
 
 
-        selectedLanguage =
-            language;
-
-
         changeLanguage(
             language
         );
-
 
     }
 );
@@ -358,8 +320,7 @@ languageSelect.addEventListener(
 
 openPdf.addEventListener(
     "click",
-    function () {
-
+    function() {
 
         const pdfUrl =
             getPdfUrl(
@@ -375,12 +336,9 @@ openPdf.addEventListener(
 
 
         window.open(
-
             pdfUrl +
             "#toolbar=0&navpanes=0&scrollbar=1",
-
             "_blank"
-
         );
 
     }
@@ -414,65 +372,33 @@ if (
 
 downloadPdf.addEventListener(
     "click",
-    function () {
-
-
-        if (!selectedLanguage) {
-
-            alert(
-                "Please select a language first."
-            );
-
-            return;
-
-        }
-
-
-        /* Clear password */
+    function() {
 
         downloadPassword.value =
             "";
 
-
-        /* Clear error */
-
         passwordError.textContent =
             "";
-
-
-        /* Reset password */
 
         downloadPassword.type =
             "password";
 
-
-        /* Reset eye */
-
         togglePassword.textContent =
             "👁";
-
-
-        /* Enable */
 
         confirmDownload.disabled =
             false;
 
-
         confirmDownload.textContent =
             "Download";
-
-
-        /* Show modal */
 
         passwordModal.classList.remove(
             "hidden"
         );
 
 
-        /* Focus */
-
         setTimeout(
-            function () {
+            function() {
 
                 downloadPassword.focus();
 
@@ -490,26 +416,15 @@ downloadPdf.addEventListener(
 
 function closePasswordModal() {
 
-
     passwordModal.classList.add(
         "hidden"
     );
 
-
     downloadPassword.value =
         "";
 
-
     passwordError.textContent =
         "";
-
-
-    downloadPassword.type =
-        "password";
-
-
-    togglePassword.textContent =
-        "👁";
 
 }
 
@@ -527,13 +442,12 @@ closePassword.addEventListener(
 
 
 /* =========================================================
-   CLOSE OUTSIDE MODAL
+   CLOSE MODAL BY CLICKING OUTSIDE
 ========================================================= */
 
 passwordModal.addEventListener(
     "click",
-    function (event) {
-
+    function(event) {
 
         if (
             event.target.classList.contains(
@@ -550,34 +464,28 @@ passwordModal.addEventListener(
 
 
 /* =========================================================
-   PASSWORD VISIBILITY
+   SHOW / HIDE PASSWORD
 ========================================================= */
 
 togglePassword.addEventListener(
     "click",
-    function () {
-
+    function() {
 
         if (
             downloadPassword.type ===
             "password"
         ) {
 
-
             downloadPassword.type =
                 "text";
-
 
             togglePassword.textContent =
                 "🙈";
 
-
         } else {
-
 
             downloadPassword.type =
                 "password";
-
 
             togglePassword.textContent =
                 "👁";
@@ -604,16 +512,13 @@ confirmDownload.addEventListener(
 
 downloadPassword.addEventListener(
     "keydown",
-    function (event) {
-
+    function(event) {
 
         if (
             event.key === "Enter"
         ) {
 
-
             event.preventDefault();
-
 
             downloadDocument();
 
@@ -624,27 +529,23 @@ downloadPassword.addEventListener(
 
 
 /* =========================================================
-   DOWNLOAD PDF
+   DOWNLOAD DOCUMENT
 ========================================================= */
 
 async function downloadDocument() {
-
 
     const enteredPassword =
         downloadPassword.value.trim();
 
 
-    /* Password empty */
+    /* Empty password */
 
     if (!enteredPassword) {
-
 
         passwordError.textContent =
             "Please enter the password.";
 
-
         downloadPassword.focus();
-
 
         return;
 
@@ -658,20 +559,17 @@ async function downloadDocument() {
         DOWNLOAD_PASSWORD
     ) {
 
-
         passwordError.textContent =
             "❌ Incorrect password. Please try again.";
 
-
         downloadPassword.select();
-
 
         return;
 
     }
 
 
-    /* Get PDF */
+    /* Get selected document */
 
     const data =
         languages[selectedLanguage];
@@ -679,10 +577,8 @@ async function downloadDocument() {
 
     if (!data) {
 
-
         passwordError.textContent =
             "Document not available.";
-
 
         return;
 
@@ -691,12 +587,8 @@ async function downloadDocument() {
 
     try {
 
-
-        /* Disable */
-
         confirmDownload.disabled =
             true;
-
 
         confirmDownload.textContent =
             "Preparing...";
@@ -705,8 +597,6 @@ async function downloadDocument() {
         passwordError.textContent =
             "";
 
-
-        /* Fetch PDF */
 
         const response =
             await fetch(
@@ -720,7 +610,6 @@ async function downloadDocument() {
 
         if (!response.ok) {
 
-
             throw new Error(
                 "PDF could not be loaded."
             );
@@ -728,13 +617,9 @@ async function downloadDocument() {
         }
 
 
-        /* Convert */
-
         const blob =
             await response.blob();
 
-
-        /* Temporary URL */
 
         const url =
             window.URL.createObjectURL(
@@ -742,10 +627,10 @@ async function downloadDocument() {
             );
 
 
-        /* Download link */
-
         const link =
-            document.createElement("a");
+            document.createElement(
+                "a"
+            );
 
 
         link.href =
@@ -766,20 +651,14 @@ async function downloadDocument() {
         );
 
 
-        /* Start */
-
         link.click();
 
-
-        /* Remove */
 
         link.remove();
 
 
-        /* Cleanup */
-
         setTimeout(
-            function () {
+            function() {
 
                 window.URL.revokeObjectURL(
                     url
@@ -790,13 +669,10 @@ async function downloadDocument() {
         );
 
 
-        /* Close */
-
         closePasswordModal();
 
 
     } catch (error) {
-
 
         console.error(
             "Download error:",
@@ -810,11 +686,8 @@ async function downloadDocument() {
     }
 
 
-    /* Restore */
-
     confirmDownload.disabled =
         false;
-
 
     confirmDownload.textContent =
         "Download";
@@ -828,7 +701,7 @@ async function downloadDocument() {
 
 document.addEventListener(
     "contextmenu",
-    function (event) {
+    function(event) {
 
         event.preventDefault();
 
@@ -842,8 +715,7 @@ document.addEventListener(
 
 document.addEventListener(
     "keydown",
-    function (event) {
-
+    function(event) {
 
         const key =
             event.key.toLowerCase();
@@ -858,8 +730,6 @@ document.addEventListener(
 
             event.preventDefault();
 
-            return;
-
         }
 
 
@@ -871,8 +741,6 @@ document.addEventListener(
         ) {
 
             event.preventDefault();
-
-            return;
 
         }
 
@@ -886,8 +754,6 @@ document.addEventListener(
 
             event.preventDefault();
 
-            return;
-
         }
 
 
@@ -899,12 +765,10 @@ document.addEventListener(
 
             event.preventDefault();
 
-            return;
-
         }
 
 
-        /* Ctrl + Shift + I/J/C */
+        /* Developer tools */
 
         if (
             (event.ctrlKey || event.metaKey) &&
@@ -930,8 +794,7 @@ document.addEventListener(
 
 document.addEventListener(
     "selectstart",
-    function (event) {
-
+    function(event) {
 
         if (
             event.target ===
@@ -941,7 +804,6 @@ document.addEventListener(
             return;
 
         }
-
 
         event.preventDefault();
 
@@ -955,7 +817,7 @@ document.addEventListener(
 
 document.addEventListener(
     "dragstart",
-    function (event) {
+    function(event) {
 
         event.preventDefault();
 
